@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>《选择》</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui"/>
+<!--<link href="css/animate.min.css" type="text/css" rel="stylesheet"/>-->
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+
+
+<style>
+		
+		*{padding: 0;margin: 0;}
+		
+		/*自动缩放以及loading框架*/
+		.swipe-wrap{width: 100%;height: 100%;position: relative;overflow: hidden;}
+		.swipe{position:absolute;width:100%;}
+		.swipe-box{width: 100%;overflow: hidden;}
+		
+		.m_clear{zoom:1;}
+		.m_clear:after{content:"";display:block;clear:both;}
+		.m_porR {position: relative;}
+		.m_porA {position: absolute;background: #fff;width: 100%;height: 100%;}
+		.m_fl {float:left;}
+		.m_fr {float:right;}
+		.m_db {display: block;}
+		.m_dn {display:none;}
+		.m_oh {overflow:hidden;}
+		.m_w100,.m_wrapper,.loadFont {width:100%;}
+		.m_mAuto {margin: 0 auto;}
+		.m_tac {text-align:center;}
+		.m_bgn {background:none;}
+		.m_fs10 {font-size:10px;}
+		.m_fs12 {font-size:12px;}
+		.m_fs14 {font-size:14px;}
+		.m_fs16 {font-size:16px;}
+		.m_fs18 {font-size:18px;}
+		.m_fs22 {font-size:22px;}
+		.m_fw {font-weight:bold;}
+		.cfff {color:#fff;}
+		.m_inpNoBg {-webkit-appearance:none;background:none;}
+		.changeWord { line-height:0;font-size:0; overflow:hidden;color:rgba(255,255,255,0);}
+		
+		/*lufylegend.js样式*/
+		.legend {position:absolute;z-index:2;font-size:0px;}
+		
+		/*loadding样式*/
+		.load {top:0;left:0;width:100%;}
+		.loadImg {width:20%;margin:50% 0 0 40%;}
+	    .loadFont{
+	    	color: #b8945c;
+	    }
+	    
+	    
+	    /*DIV*/
+	   .cropit-image-preview {
+		  /* You can specify preview size in CSS */
+		  width:100%;
+		  height: 100%;
+		  position: absolute;
+		  top: 0;
+		  left:0;
+		  z-index: 0;
+		  /*-webkit-transform-origin:left top; 
+		  -webkit-transform: rotate(90deg);*/
+		}
+		
+		
+		</style>
+
+          <!--<img class="fan" src="images/fan.jpg" width="100%" height="auto" style="margin-top: 30px;" />-->
+</head>
+<body>
+	
+	<!--loading-->
+    <div class="m_porA load">
+    	
+    	<div class="cirbao">
+    		<img src="images/load_circle.png" class="load_circle" />
+    	</div>
+        
+        <img src="images/loadtext.png" class="loadtext" />
+        
+        <div class="jd">
+    		11%
+    	</div>
+    	
+    	
+	    <!--<img src="images/load_text.png" class="load_text" />
+	    <div class="load_ani">
+	    	<div class="ani"></div>
+	    </div>-->
+	</div>
+	
+	<!--main-->
+	 <div class="m_wrapper" style="opacity:0;background: red;">
+	 	
+	 	<img id="backgroundimg" src="" style="background: red;position: absolute;left: 0;top: 0;z-index: 1;"  />
+	 	<a id="home" href="###"><img src="images/wyyz.png" style="position: absolute;left: 0;bottom: 0;width: 28%;height: auto;z-index:99" /></a>
+	 	
+	</div>
+	<script src="http://cdn.bootcss.com/jquery/1.8.3/jquery.min.js"></script>
+	<script src="js/zepto.min.js"></script>
+	<script src="js/index.js"></script>
+  <script type="text/javascript">
+
+      function getQueryStringByName(name) {
+          var result = location.search.match(new RegExp("[\?\&]" + name + "=([^\&]+)", "i"));
+          if (result == null || result.length < 1) {
+              return "";
+          }
+          return result[1];
+      }
+      var imgName ="http://wx.fractalist.com.cn/yixin/images/share/"+getQueryStringByName("poterid")+".png";
+      $("#backgroundimg").attr("src", imgName);
+      //掉转到主页
+      $("#home").click(function () {
+          var from = getQueryStringByName("from");
+          location.href = "http://wx.fractalist.com.cn/yixin/h5/index.html?from=" + from;
+
+      });
+
+  </script>
+   
+	
+	
+</body>
+</html>

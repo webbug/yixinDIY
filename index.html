@@ -1,0 +1,954 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui"/>
+  <title>定制时尚大片</title>
+  <link rel="stylesheet" href="lib/cropper.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/style.css" type="text/css" />
+
+   <style>
+   
+    .ditan{
+    	width: 100%;height: 12%;background: rgba(0,0,0,.5);position: absolute;z-index: 999999999999999999999999999999;left:0;bottom:0;display: none;
+    }
+   	.ditan_in{
+   		-webkit-transform: translate(0,0);
+   		-webkit-transition: all 1s ease-in-out;
+   	}
+   </style>
+  
+</head>
+<body>
+	
+		<!--loading-->
+    <div class="m_porA load">
+    	
+    	<div class="cirbao">
+    		<img src="images/load_circle.png" class="load_circle" />
+    	</div>
+        
+        <img src="images/loadtext.png" class="loadtext" />
+        
+        <div class="jd">
+    		11%
+    	</div>
+    	
+    	
+	    <!--<img src="images/load_text.png" class="load_text" />
+	    <div class="load_ani">
+	    	<div class="ani"></div>
+	    </div>-->
+	</div>
+	
+	<!--main-->
+	 <div class="m_wrapper" style="opacity:0;">
+	 	
+	 	
+        
+        
+        <!--滑屏-->
+        <div class="lb" style="display:block">
+        		
+		 <div id="wrap" class="wrapper">
+	        <div id="pages">
+	            <div class="page page1">
+	            	 <img src="images/lb1.jpg" width="100%" height="100%" />
+	            	 <img src="images/lb2.png" class="djzz zz" color="#2794c1" />
+	            </div>
+	            <div class="page page2">
+	            	<img src="images/lb4.jpg" width="100%" height="100%" />
+	            	 <img src="images/lb2.png" class="djzz2 zz" color="#b16d25" />
+	            </div>
+	            <div class="page page3">
+	            	 <img src="images/lb3.jpg" width="100%" height="100%" />
+	            	 <img src="images/lb2.png" class="djzz3 zz" color="#c7434c" />
+	            </div>
+	        </div>
+	        
+	        <img src="images/left_icon.png" class="left_icon" />
+	        <img src="images/right_icon.png" class="right_icon" />
+	        <div class="leftgai"></div>
+	        <div class="rightgai"></div>
+	        
+         </div>
+         
+         
+        </div>
+        
+        
+        <!--DIY-->
+        <div class="diy" style="display: none;">
+        	
+        	<!--制作页面-->
+        	<div class="zzy">
+        		
+        		
+        		
+        		  <div class="container" id="crop-avatar" style="position:absolute;left: 0;top: 0;z-index: 999999;width: 100%;height: 100%;">
+
+                <div class="modal-content" style="position: absolute;left: 0;top: 0;width: 100%;height: 100%;">
+              <div class="avatar-body" style="position: absolute;left: 0;top: 0;width: 100%;height: 100%;">
+               <form class="avatar-form" action="crop.php" enctype="multipart/form-data" method="post" style="position: absolute;left: 0;top: 0;width: 100%;height: 100%;"> 
+                <!-- Upload image and data -->
+                <div class="avatar-upload" style="position: absolute;left: 0;top: 0;width: 100%;height: 100%;">
+                  <input type="hidden" class="avatar-src" name="avatar_src">
+                  <input type="hidden" class="avatar-data" name="avatar_data">
+                  <!--<label for="avatarInput">Local upload</label>-->
+                  <input type="file" class="avatar-input" id="avatarInput" name="avatar_file" style="position: absolute;left: 0;top: 0;width: 100%;height: 100%;z-index: 999999;">
+                  <img  class="lsimg" style="opacity: 0;" src="" >
+                </div>
+
+                <!-- Crop and preview -->
+                <div class="row" style="position: absolute;left: 0;top: 0;width: 100%;height: 100%;display: none;">
+                  <div class="col-md-12" style="position: absolute;left: 0;top: 0;width: 100%;height: 100%;">
+                    <div class="avatar-wrapper" style="position: absolute;left: 0;top: 0;width: 100%;height: 100%;"></div>
+                  </div>
+       
+                </div>
+                  <div class="col-md-3" style="position: absolute;left: 0;top: 0;width: 100%;height: 100%;display: none;">
+                      <button type="submit" class="btn btn-primary btn-block avatar-save" style="position: absolute;left: 0;top: 0;width: 100%;height: 100%;">Done</button>
+                  </div>
+    
+            <div class="avatar-preview" style="display:none;">
+              <img id="corpImg"/>
+            </div>
+          </form>
+        </div>
+
+        <!-- Loading state -->
+        <div class="loading" aria-label="Loading" role="img" tabindex="-1"></div>
+    </div>
+    
+        		  </div>
+
+
+              <img src="images/lan_sy.png" class="lan_sy sy"  style="position: absolute;z-index: 99999999;display: none;" />
+                     <img src="images/jin_sy.png" class="jin_sy sy"  style="position: absolute;z-index: 99999999;display: none;" />
+                                 <img src="images/fen_sy.png" class="fen_sy sy"  style="position: absolute;z-index: 99999999;display: none;" />
+         
+              <img src="images/cqqd_bg.png" class="cjqd" style="position: absolute;;display: none;" />
+         
+         
+        	       <!--自加按钮-->
+	                <div class="tztp"></div>
+	                <div class="hyz"></div>
+	                
+	                <!--自加图片-->
+	                <img src="images/zzytop.png" class="zzytop cft" />
+	                <img src="images/zzytop2.png" class="zzytop zzytop2" />
+	                <img src="images/ws.png" class="ws" />
+	                <img src="images/sui.png" class="sui" />
+	                <img src="images/sui.png" class="sui2" />
+	                <img src="images/textbottom.png" class="textbottom" />
+	                
+	                <!--自加按钮-->
+	                <div class="shhb"></div>
+	                
+	                <!--自加表单-->
+	                <input type="text"  class="inputbg name"  value="张晓乐" />
+	                <input type="text" class="inputbg age1"  value="22" />
+	                <input type="text" class="inputbg textleft text1"  value="音乐梦想从一把吉他开始。" />
+	                <input type="text" class="inputbg age2"  value="38" />
+	                <input type="text" class="inputbg textleft text2"  value="用科技为音乐梦想续航。" />
+	                
+	                <!--自加按钮-->
+	                <div class="inputbg inputbutton" style="text-align: left;text-indent: 0.5em;" val="音乐&梦想，在心中or在路上">点击选择文字</div>
+	                
+	                
+	                <div class="hbsc"></div>
+      
+        		
+        	    </div>
+        	
+        	
+        	
+			        <!--暂存--> 
+						  <canvas id="canvas"  style="position: fixed;z-index: -1111111111;top:0;left:0;display:block;background: #fff;opacity: 0;"></canvas>
+						
+						  <!--导出-->
+						  <img id="dc" src="" style="width: 100%;height: 100%;position: absolute;z-index: 999999999999999999999999999999999;top:0;left: 0;display: none;background: #000;" />
+	
+	
+	
+        </div>
+
+        <!--DIY end-->
+        
+        
+        <div class="textchoice" style="display: none;">
+        	<strong class="textheng textheng1 zsbg">我不是有故事的人</strong>
+        	<strong class="textheng">我就是我，我是女王大人</strong>
+        	<strong class="textheng">土豪的世界，我懂不懂不重要</strong>
+        	<strong class="textheng">人在囧途，我没去泰囧，也没去港囧</strong>
+        	<strong class="textheng">我不是夏洛，我没有烦恼，我就是我</strong>
+        	<input style="display: block;text-align: center;background: transparent;border-radius: 0;" class="textheng texthenginput" placeholder="手动填写"  >
+        	
+        	<img src="images/qd.png" class="qd" />
+        	</div>
+
+   
+   
+
+
+	 </div>
+	 <canvas id="previewCanvas" style="display:none"></canvas>
+
+   <img src="images/cxzz.png" class="cxzz"  style="position: absolute;left: 5%;top: 5%;z-index: 99999999999999999999;width: 25%;height: auto;display: none;" />
+    
+
+  <div class="ditan" >
+  	  <img src="images/cxzz.png" class="cxzz" style="position: absolute;left: 50%;top: 50%;-webkit-transform:translate(-115%,-50%);width: 30%;height: auto;" />
+  	  <img class="fxhy" src="images/fxhy.png" style="position: absolute;left: 50%;top: 50%;-webkit-transform:translate(15%,-50%);width: 30%;height: auto;" />
+  </div>
+   
+   <img class="fxpyq" src="images/fxpyq.png" style="position: absolute;left: 0;top: 0;width: 100%;height: 100%;z-index: 99999999999999999999999999999999999999999999999999;display: none;" />
+ 
+   <div class="xts" style="position: absolute;left: 0;top: 0;width: 100%;height: 100%;z-index: 999999999999999999999999999999999999999999999999999999;display: block;background: rgba(0,0,0,.8);display: none;">
+   	  <img class="xtsimg" src="images/xts.png" style="position: absolute;width: 100%;" />
+   	  <div class="xstpass" style="position: absolute;z-index: 999999999999999999999999999999999999999999999999999999;"></div>
+   </div>
+
+	<script src="http://cdn.bootcss.com/jquery/1.8.3/jquery.min.js"></script>
+	<script src="js/zepto.min.js"></script>
+	 <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+	<script src="js/data.js"></script>
+	<script src="js/WX_share.js"></script>
+	<script src="js/index.js"></script>
+ 
+
+	<script>
+	
+    wxtitle = "【定制时尚大片】这就是我，我只是选择做不一样的自己！";
+    wxdesc = wxtitle;
+    //alert("wxlink:" + wxlink);
+    wximgUrl = "http://wx.fractalist.com.cn/yixin/images/share/share1.jpg";
+    //alert("wximgUrl:" + img);
+    wx_share(wxtitle, wxdesc, wxlink, wximgUrl);
+
+
+    //记录diy pv
+	  addPv("diy");
+	
+	$(".cxzz").click(function () {
+	    window.location.reload();
+	});
+
+	  /*获取加载进度*/
+       var aImg = document.getElementsByTagName('img');
+//     alert(aImg.length);
+       var iNow=0;
+	    for(var i=0;i<aImg.length;i++){
+		  (function(i){
+			var yImg = new Image();
+			yImg.onload = function(){
+			iNow++;	
+			
+			var pros=parseInt(iNow/aImg.length*100);
+			
+			if(iNow==(aImg.length-1)){
+				pros=100;
+			}
+		    if(pros<15){
+		    	pros=11;
+		    }else{
+		    	pros=pros;
+		    }
+		    
+		    
+		    setTimeout(function(){
+//		    	console.log(pros);
+		    	jQuery('.jd').text(pros+'%');
+		    },500);
+			
+		};
+		 yImg.src=aImg[i].src;
+		 })(i);
+		}	
+         /*获取加载进度end*/
+	
+	
+	
+		jQuery(function(){
+			
+			
+			
+			var canvas = document.getElementById("canvas");
+            var context = canvas.getContext("2d");
+            var image1 = new Image();
+            var image2 = new Image();
+            var image3 = new Image();
+            var image4 = new Image(); 
+            var image5 = new Image();
+            var image6 = new Image(); 
+            var image7 = new Image(); 
+            var image8 = new Image(); 
+            var pingKuan=jQuery(".m_wrapper").width(),//m_wrapper是最外层div的类名
+			bii = function(mun){
+				var oScale = mun/640;	//750是psd宽度
+				return oScale.toFixed(6);
+			};
+
+			var textColor;
+			
+			
+			Zepto('.xstpass').tap(function(){
+				Zepto('.xts').hide();
+			});
+
+			Zepto('.fxhy').tap(function(){
+				Zepto('.fxpyq').show();
+			});
+			
+			Zepto('.fxpyq').tap(function(){
+				Zepto(this).hide();
+			});;
+			
+						    //制作照片
+		    Zepto('.zz').tap(function(){
+		    	textColor=Zepto(this).attr('color');
+//		    	alert(textColor);
+		    	setTimeout(function(){
+		    	  Zepto('.diy').show();	
+		    	  Zepto('.lb').hide();
+		    	},400);
+			
+			jQuery('#avatarInput').change(function(){
+				jQuery('.row').show();
+				jQuery('.cjqd').show();
+		    jQuery('.lsimg').hide();
+		
+		    jQuery('.container').css({
+		    	"width":"100%",
+		    	"height":"100%"
+		    });
+		
+		
+		
+				 if(textColor=="#2794c1"){
+				 	  jQuery('.lan_sy').show();
+				 }else if(textColor=="#b16d25"){
+				 	 jQuery('.jin_sy').show();
+				 }else if(textColor=="#c7434c"){
+				 	jQuery('.fen_sy').show();
+				 }
+				
+				
+			
+				
+			});
+			
+			
+			if(textColor=="#2794c1"){
+		
+				 	  	/*输入字数限制*/
+			jQuery('.text1').blur(function(){
+				if(jQuery(this).val().length>=(Math.round(jQuery(window).width()/18.5))-5){
+					alert('超出所限制的字数，请重新入');
+					jQuery(this).val('');
+					jQuery(this).focus();
+				}
+			});
+			
+			jQuery('.text2').blur(function(){
+				if(jQuery(this).val().length>=(Math.round(jQuery(window).width()/18.5))-5){
+					alert('超出所限制的字数，请重新入');
+					jQuery(this).val('');
+					jQuery(this).focus();
+				}
+			});
+			
+			
+			jQuery('.texthenginput').blur(function(){
+				if(jQuery(this).val().length>=(Math.round(jQuery(window).width()/18.5))-1){
+					alert('超出所限制的字数，请重新入');
+					jQuery(this).val('');
+					jQuery(this).focus();
+				}
+			});
+		
+				 	  
+				 }else if(textColor=="#b16d25"){
+				 	
+				 	 var i5;
+				 	 if(jQuery(window<=320)){
+				 	 	   i5=13;
+				 	 }else{
+				 	 	   i5=16.5;
+				 	 }
+				 	
+				 	 	/*输入字数限制*/
+						jQuery('.text1').blur(function(){
+							if(jQuery(this).val().length>=(Math.round(jQuery(window).width()/i5))-6){
+								alert('超出所限制的字数，请重新入');
+								jQuery(this).val('');
+								jQuery(this).focus();
+							}
+						});
+						
+						jQuery('.text2').blur(function(){
+							if(jQuery(this).val().length>=(Math.round(jQuery(window).width()/i5))-6){
+								alert('超出所限制的字数，请重新入');
+								jQuery(this).val('');
+								jQuery(this).focus();
+							}
+						});
+						
+						
+						jQuery('.texthenginput').blur(function(){
+							if(jQuery(this).val().length>=(Math.round(jQuery(window).width()/i5))-6){
+								alert('超出所限制的字数，请重新入');
+								jQuery(this).val('');
+								jQuery(this).focus();
+							}
+						});
+		
+				 }else if(textColor=="#c7434c"){
+				   	/*输入字数限制*/
+				   	
+				   var i5;
+				 	 if(jQuery(window<=320)){
+				 	 	   i5=13;
+				 	 }else{
+				 	 	   i5=17.5;
+				 	 }
+				   	
+						jQuery('.text1').blur(function(){
+							if(jQuery(this).val().length>=(Math.round(jQuery(window).width()/i5))-6){
+								alert('超出所限制的字数，请重新入');
+								jQuery(this).val('');
+								jQuery(this).focus();
+							}
+						});
+						
+						jQuery('.text2').blur(function(){
+							if(jQuery(this).val().length>=(Math.round(jQuery(window).width()/i5))-6){
+								alert('超出所限制的字数，请重新入');
+								jQuery(this).val('');
+								jQuery(this).focus();
+							}
+						});
+						
+						
+						jQuery('.texthenginput').blur(function(){
+							if(jQuery(this).val().length>=(Math.round(jQuery(window).width()/i5))-1){
+								alert('超出所限制的字数，请重新入');
+								jQuery(this).val('');
+								jQuery(this).focus();
+							}
+						});
+				 }
+			
+			
+			
+			
+				/**确定裁剪*/
+			Zepto('.cjqd').tap(function(){
+				
+				Zepto('.cft').hide();
+				
+				Zepto(this).hide();
+				jQuery('.sy').hide();
+				jQuery('.row').hide();
+				
+
+			  var url = cropAvatar.confirmCropImg();
+				
+				jQuery('.lsimg').attr('src',url).css('opacity',1);
+			
+			  jQuery('.lsimg').show();
+			  
+			  
+			  jQuery('.container').css({
+					"width":pingKuan*bii(640),
+					"height":pingKuan*bii(320)
+			  });
+				
+			});
+			
+			
+			
+			
+			
+        Zepto('.tztp').tap(function(){
+        	if(jQuery('#avatarInput').val()!=""){
+        		 jQuery('.lsimg').hide();
+        		 
+        		
+        		jQuery('.container').css({
+        			"overflow":"auto",
+        			"height":jQuery(window).height()+'px'
+        		});
+        		
+            jQuery('.cjqd').show();      
+           
+        		setTimeout(function(){
+        			 jQuery('.row').show();
+        		},400);
+ 
+        		
+        	}
+        	
+        });
+
+
+         Zepto('.hyz').tap(function(){
+         	jQuery('#avatarInput').trigger('click');
+         });
+
+          
+  
+		    	
+		    	if(textColor=="#b16d25"){
+		    		jQuery('.name').val("雷月婷");
+		    		jQuery('.age1').val("29");
+		    		jQuery('.age2').val("42");
+		    		jQuery('.text1').val("银行精英,每周飞行时间超过24小时。");
+		    		jQuery('.text2').val("公益创始人，足迹遍布全球36个国家。");
+		    		jQuery('.inputbutton').attr('val',"强（qiang）人还是强（jiang）人。");
+		    	}else if(textColor=="#c7434c"){
+		    		jQuery('.name').val("黄蕊");
+		    		jQuery('.age1').val("20");
+		    		jQuery('.text1').val("他们都说我有公主病。");
+		    		jQuery('.age2').val("30");
+		    		jQuery('.text2').val("公主凭什么不能有公主病");
+		    		jQuery('.inputbutton').attr('val',"爱谁谁,LOVE WHO WHO");
+		    	}
+		    	
+		    });
+			
+			
+            
+//          /*后定高度*/
+            canvas.width=jQuery(window).width()*2;
+            canvas.height=jQuery(window).height()*2;
+            
+            jQuery('.cropit-image-preview').css({
+            	"width":jQuery(window).width()+'px',
+            	"height":jQuery(window).height()+'px'
+            });
+            
+			
+			
+			
+			
+			/*画入*/
+	
+			
+			  
+			  
+			
+			  Zepto('.hbsc').tap(function(){
+
+			  var flag=0;
+			    	
+			    	
+			    	if(jQuery('#avatarInput').val()==""){
+			    		alert("请选一张择图片!");
+			    	}else{
+			    		  jQuery('.container').hide();
+			    	    jQuery('.lsimg').hide();
+			    	   
+			    		if(textColor=="#2794c1"){
+			    			
+				    	
+				    	
+			    	  
+						    image1.src = jQuery('#corpImg').attr('src');
+						    image2.src = "images/ws_lan.png";
+//						    image3.src = "images/sjt.png";
+						 
+						    image1.onload = function(){
+
+							      context.drawImage(image1,0,0,canvas.width,canvas.height);
+			
+//                  greyEffect();
+                    
+                    
+                    flag=flag+1;
+							       
+							  image2.onload=function(){
+		
+				            context.drawImage(image2,0,0,canvas.width,canvas.height);
+	
+	                  context.font = "900 77px 微软雅黑";
+	                  context.textAlign ="right";
+						        context.textBaseline="hanging"; 
+						        context.fillStyle=textColor;
+						        context.fillText("我是 "+jQuery('.name').val(),canvas.width*0.962,canvas.height*0.540);
+						        context.font = "900 34px Arial";
+			      	      context.fillText(jQuery('.age1').val()+"岁,"+jQuery('.text1').val(),canvas.width*0.988,canvas.height*0.638);
+			      	      context.fillText(jQuery('.age2').val()+"岁,"+jQuery('.text2').val(),canvas.width*0.988,canvas.height*0.690);
+			      	      context.fillText(jQuery('.inputbutton').attr('val'),canvas.width*0.97,canvas.height*0.750);
+			      	      
+				            flag=flag+1;
+				            
+				        };
+				        
+//				        
+//				        image3.onload=function(){
+//		
+//				            context.drawImage(image3,0,0,canvas.width,canvas.height);
+//	
+//                  flag=flag+1;
+//				            
+//				        };
+				       
+							       
+							       
+							       
+				      }
+				            
+	
+		
+				    	}else if(textColor=="#b16d25"){
+				   
+						    image1.src = jQuery('#corpImg').attr('src');
+//						  image2.src = "images/wsws_hei.png";
+                image4.src = "images/wsws_heit.png";
+						    	    image5.src = "images/wsws_heil.png";
+						    	    	    image6.src = "images/wsws_heir.png";
+						    	    	    	    image7.src = "images/wsws_heib.png";
+						    	    	    	    	    image8.src = "images/wsws_heitext.png";
+						    
+					
+						    image1.onload = function(){
+	
+							      context.drawImage(image1,30/2,50/2,canvas.width-30,canvas.height-50);
+	
+//			                      greyEffect();
+			                      
+			                      
+	
+							       flag=flag+1;
+							       
+							       
+							       
+							       image4.onload=function(){        	
+				            		context.drawImage(image4,pingKuan * bii(0),pingKuan * bii(0),canvas.width,canvas.height);
+				            		
+				            		context.font = "900 77px Arial";
+								        context.textAlign ="left";
+								        context.textBaseline="hanging"; 
+								        context.fillStyle=textColor;
+					      	      context.fillText("我是 "+jQuery('.name').val(),canvas.width*0.1,canvas.height*0.540);
+					      	      
+
+
+
+							      	      if(jQuery(window).width()<=320){
+//							      	      	alert('5');
+							      	      	context.font = "900 26px Arial";
+							      	      }else{
+//							      	      	alert('!5');
+							      	      	context.font = "900 33px Arial";
+							      	      }
+					      	     
+					      	      
+					      	      context.fillText(jQuery('.age1').val()+"岁,"+jQuery('.text1').val(),canvas.width*0.109,canvas.height*0.633);
+					      	      context.fillText(jQuery('.age2').val()+"岁,"+jQuery('.text2').val(),canvas.width*0.109,canvas.height*0.683);
+					      	      context.fillText(jQuery('.inputbutton').attr('val'),canvas.width*0.109,canvas.height*0.735);
+					      	      
+				            		flag=flag+1;
+				            };
+				              image5.onload=function(){        	
+				            		context.drawImage(image5,pingKuan * bii(0),pingKuan * bii(0),canvas.width,canvas.height);
+				            		flag=flag+1;
+				            };
+				              image6.onload=function(){        	
+				            		context.drawImage(image6,pingKuan * bii(0),pingKuan * bii(0),canvas.width,canvas.height);
+				            		flag=flag+1;
+				            };
+				              image7.onload=function(){        	
+				            		context.drawImage(image7,pingKuan * bii(0),pingKuan * bii(0),canvas.width,canvas.height);
+				            		flag=flag+1;
+				            };
+				              image8.onload=function(){        	
+				            		context.drawImage(image8,pingKuan * bii(0),pingKuan * bii(0),canvas.width,canvas.height);
+				            		flag=flag+1;
+				            };
+							       
+							       
+				           };
+				            
+				            
+				         
+				            
+		
+				    	}else{
+				   
+						    image1.src = jQuery('#corpImg').attr('src');
+//						  image2.src = "images/ws_hong.png";
+						    image4.src = "images/ws_hongt.png";
+						    	    image5.src = "images/ws_hongl.png";
+						    	    	    image6.src = "images/ws_hongr.png";
+						    	    	    	    image7.src = "images/ws_hongb.png";
+						    	    	    	    	    image8.src = "images/ws_hongtext.png";
+						    
+					
+						    image1.onload = function(){
+	
+							      context.drawImage(image1,40/2,50/2,canvas.width-40,canvas.height-50);
+	
+//			              greyEffect();
+			                      
+			              
+					      	  flag=flag+1;
+					      	      
+					      	      
+					      	      image4.onload=function(){        	
+						            		context.drawImage(image4,pingKuan * bii(0),pingKuan * bii(0),canvas.width,canvas.height);
+						            		
+						            		context.font = "900 77px Arial";
+										        context.textAlign ="left";
+										        context.textBaseline="hanging"; 
+										        context.fillStyle=textColor;
+							      	      context.fillText("我是 "+jQuery('.name').val(),canvas.width*0.1,canvas.height*0.540);
+							      	      
+							      	      if(jQuery(window).width()<=320){
+//							      	      	alert('5');
+							      	      	context.font = "900 26px Arial";
+							      	      }else{
+//							      	      	alert('!5');
+							      	      	context.font = "900 35px Arial";
+							      	      }
+
+							      	      context.fillText(jQuery('.age1').val()+"岁,"+jQuery('.text1').val(),canvas.width*0.109,canvas.height*0.636);
+							      	      context.fillText(jQuery('.age2').val()+"岁,"+jQuery('.text2').val(),canvas.width*0.109,canvas.height*0.686);
+							      	      context.fillText(jQuery('.inputbutton').attr('val'),canvas.width*0.109,canvas.height*0.741);
+								            		
+						            		flag=flag+1;
+						            };
+						              image5.onload=function(){        	
+						            		context.drawImage(image5,pingKuan * bii(0),pingKuan * bii(0),canvas.width,canvas.height);
+						            		flag=flag+1;
+						            };
+						              image6.onload=function(){        	
+						            		context.drawImage(image6,pingKuan * bii(0),pingKuan * bii(0),canvas.width,canvas.height);
+						            		flag=flag+1;
+						            };
+						              image7.onload=function(){        	
+						            		context.drawImage(image7,pingKuan * bii(0),pingKuan * bii(0),canvas.width,canvas.height);
+						            		flag=flag+1;
+						            };
+						              image8.onload=function(){        	
+						            		context.drawImage(image8,pingKuan * bii(0),pingKuan * bii(0),canvas.width,canvas.height);
+						            		flag=flag+1;
+						            };
+					      	      
+					      	      
+					      	      
+							       
+				            }
+				            
+				       
+		
+				    	}
+				    	
+				    	
+				    	  jQuery('#canvas').css({
+	              	      	"top":"0",
+	              	      	"left":"0"
+	              	      });
+	             jQuery('.cropit-image-preview').hide();
+	             
+	             
+	              //上传海报  
+									var timer=setInterval(function() {
+										
+										//console.log(flag);
+										
+										if(textColor!="#2794c1"){
+											 if(flag==6){
+
+
+											 	 clearInterval(timer);
+											 	 var imgString = canvas.toDataURL('image/png');
+									
+													// 重新制作显示
+													jQuery('#dc').attr('src', imgString);
+													jQuery('#dc').show();
+													setTimeout(function(){
+															jQuery('.ditan').show();
+															Zepto('.xts').show();
+													},3500);
+	
+													
+													//上传海报 
+													imgString = imgString.replace('data:image/png;base64,', '');
+													addPoster(jQuery('.name').val(), jQuery('.age1').val(), jQuery('.text1').val(), jQuery('.age2').val(), jQuery('.text2').val(), imgString, jQuery('.inputbutton').attr('val'));
+										     
+										      /*清零*/
+										     	flag=0;
+										     
+											 }
+											 
+										}else{
+											
+											  if(flag==2){
+
+											 	 clearInterval(timer);
+											 	 var imgString = canvas.toDataURL('image/png');
+									
+													// 重新制作显示
+													jQuery('#dc').attr('src', imgString);
+													jQuery('#dc').show();
+													setTimeout(function(){
+															jQuery('.ditan').show();
+															Zepto('.xts').show();
+													},3500);
+	
+													
+													//上传海报 
+													imgString = imgString.replace('data:image/png;base64,', '');
+													addPoster(jQuery('.name').val(), jQuery('.age1').val(), jQuery('.text1').val(), jQuery('.age2').val(), jQuery('.text2').val(), imgString, jQuery('.inputbutton').attr('val'));
+										     
+										      /*清零*/
+										     	flag=0;
+										     
+											 }
+										     	
+										}
+										
+										
+									}, 200);
+										
+										
+							
+							
+							
+							
+							}
+							
+							
+							
+							
+							
+							
+							
+							});
+							
+							/*灰度滤镜*/
+		         function greyEffect(){
+
+            var imageData = context.getImageData( 0 , 0 , canvas.width , canvas.height )
+            var pixelData = imageData.data
+            for( var i = 0 ; i < canvas.width * canvas.height ; i ++ ){
+
+                var r = pixelData[i*4+0]
+                var g = pixelData[i*4+1]
+                var b = pixelData[i*4+2]
+
+                var grey = r*0.1+g*0.49+b*0.11
+
+                pixelData[i*4+0] = grey
+                pixelData[i*4+1] = grey
+                pixelData[i*4+2] = grey
+            }
+
+            context.putImageData( imageData , 0 , 0 , 0 , 0 , canvas.width , canvas.height )
+            
+        }
+			
+			
+			
+			/*导出*/
+//			jQuery('#btnOpen2').click(function(){
+//
+//	            var imgsrc=canvas.toDataURL("image/png",1);
+//	            jQuery('#dc').attr('src',imgsrc);
+//			
+//			})
+			
+		
+		    
+		   
+//			setInterval(function(){
+//				if(jQuery('.cropit-image-preview').hasClass('cropit-image-loaded')){
+//					jQuery('.cropit-image-preview').show();
+//					return false;
+//				}
+//			},1);
+			
+			
+			Zepto('.inputbutton').tap(function(event){
+				event.stopPropagation();
+				setTimeout(function(){
+				  Zepto('.textchoice').show();	
+				},400);
+			});
+			
+			
+			Zepto('.textheng').tap(function(){
+				Zepto('.textheng').removeClass('zsbg');
+				Zepto(this).addClass('zsbg');
+			});
+			
+			
+			Zepto('.qd').tap(function(){
+				
+				if(Zepto('.texthenginput').val()==""){
+					Zepto('.textheng').each(function(){
+						if(Zepto(this).hasClass('zsbg')){
+							Zepto('.inputbutton').text(Zepto(this).text());
+							Zepto('.inputbutton').attr('val',Zepto(this).text());
+						}
+				   });
+				}else{
+					Zepto('.inputbutton').text(Zepto('.texthenginput').val());
+					Zepto('.inputbutton').attr('val',Zepto('.texthenginput').val());
+				}
+				
+				Zepto('.texthenginput').val("");
+				
+				Zepto('.textchoice').hide();
+			});
+			
+			
+		});
+	
+	</script>
+	
+	<script type="text/javascript" src="js/pageSwitch.js"></script>
+	<script>
+		var reg=location.search.match(),
+		ts=reg&&reg[1]||'scrollX',
+		a=new pageSwitch('pages',{
+        duration:800,
+        start:0,
+        direction:0,
+        loop:false,
+        ease:'ease',
+        transition:ts,
+		freeze:false,
+		mouse:false,
+        mousewheel:false,
+        arrowkey:true
+        });
+        
+        
+        
+		Zepto('.leftgai').tap(function () {
+
+		    a.prev();
+		    diy_share();
+        	
+        });
+        
+		Zepto('.rightgai').tap(function () {
+		    a.next();
+		    diy_share();
+        });
+        
+	</script>
+	
+
+  
+  <script src="lib/jquery.min.js"></script>
+  <script src="lib/cropper.min.js"></script>
+  <script src="js/exif.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
